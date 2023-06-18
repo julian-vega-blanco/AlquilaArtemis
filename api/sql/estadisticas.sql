@@ -2,7 +2,7 @@
 CREATE DATABASE alquilartemis;
 
 CREATE TABLE empleados (
-    empleado_id INT PRIMARY KEY AUTO_INCREMENT,
+    empleado_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nombre VARCHAR(255) NOT NULL,
     apellido VARCHAR(255) NOT NULL,
     fecha_nacimiento DATE,
@@ -10,7 +10,7 @@ CREATE TABLE empleados (
 );
 
 CREATE TABLE producto (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     Nombre VARCHAR(255),
     Descripcion VARCHAR(255),
     Precio DECIMAL(10, 2),
@@ -108,10 +108,10 @@ CREATE TABLE inventario (
 
 
 INSERT INTO `empleados` (`empleado_id`, `nombre`, `apellido`, `fecha_nacimiento`, `puesto`) VALUES
-(1, 'Andres Santiago',' Rincon Diaz', '12-03-2004', 'produccion'),
-(2, 'Sebastia Andres',' Zuluaga Salgado', '12-03-2004', 'produccion'),
-(3, 'Santiago Pepo',' Castro Nino', '12-03-2004', 'produccion'),
-(4, 'Teemo Teee',' Lirroz Nica', '12-03-2004', 'produccion'),
-(5, 'Andres Santiago',' Rincon Diaz', '12-03-2004', 'produccion'),
-(6, 'Andres Santiago',' Rincon Diaz', '12-03-2004', 'produccion'),
+(1, 'Andres Santiago','Rincon Diaz', 2009-12-09, 'produccion'),
+(2, 'Sebastia Andres','Zuluaga Salgado', 2002-12-07, 'produccion'),
+(3, 'Santiago Pepo','Castro Nino', 2003-12-03, 'produccion'),
+(4, 'Teemo Teee',' Lirroz Nica', 2000-12-26, 'produccion'),
+(5, 'Andres Santiago','Rincon Diaz', 2002-12-00, 'produccion'),
+(6, 'Andres Santiago','Rincon', 2001-12-09, 'produccion');
 

@@ -1,4 +1,4 @@
-Conectar.php<?php
+<?php
 
 class Conectar{
 
@@ -7,7 +7,7 @@ class Conectar{
     protected function Conexion(){
 
         try {
-            $conectar = $this->db= new PDO("mysql:host=localhost;dbname=alquilaArtemis","campus","campus2023");
+            $conectar = $this->db= new PDO("mysql:host=localhost;dbname=alquilartemis","root","");
             return $conectar;
         } catch (Exeption $e) {
             return $e -> getMessage();

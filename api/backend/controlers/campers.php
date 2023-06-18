@@ -13,26 +13,25 @@ require_once ("../config/Conectar.php");
 require_once ("../models/Camper.php");
 
 
-    $camper = new Camper();
+    $empleado = new Empleado();
     $body = json_decode(file_get_contents("php://input"), true);
 
     switch ($_GET["op"]) {
         case 'GetAll':
-            $datos = $camper -> get_camper();
+            $datos = $empleado -> get_empleado();
             echo json_encode($datos);
         break;
 
         case "GetId";
 
-        $datos = $camper->get_camper_id($body["id"]);
+        $datos = $empleado->get_empleado_id($body["empleado_id"]);
         echo json_encode($datos);
          
         break;
 
         case "insert":
 
-            $datos=$camper->dba_insert($body["id"],$body["image"],$body["nombre"],$body["edad"],$body["promedio"],$body["nivelCampus"],$body["nivelIngles"],
-            $body["especialidad"],$body["direccion"],$body["cedular"],$body["Ingles"],$body["Ser"],$body["Review"],$body["Skills"],$body["Assitencia"]);
+            $datos=$empleado->dba_insert($body["empleado_id"],$body["nombre"],$body["apellido"],$body["fecha_nacimiento"],$body["puesto"]);
             echo json_encode("insertado correctamente");
     
             break;

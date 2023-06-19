@@ -1,53 +1,82 @@
-<section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Empleados Ingreso</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/AlquilaArtemis/">Home</a></li>
-              <li class="breadcrumb-item active">Empleados Ingreso</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+<?php
 
-    <!-- Main content -->
-    <section class="content">
+$conexion= new mysqli("localhost","root","","alquilartemis");
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <!-- Default box -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Title</h3>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body">
-                Start creating your amazing application!
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                Footer
-              </div>
-              <!-- /.card-footer-->
+?>
+
+
+
+    <div class="container-fluid text-center row">
+        <form class="text-center col-12" action="" method="POST">
+            <h3>Registro de empleado</h3>
+            
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Nombre de la persona</label>
+                <input type="text" class="form-control" name="nombre">
             </div>
-            <!-- /.card -->
-          </div>
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Apellido de la persona</label>
+                <input type="text" class="form-control" name="apellido">
+            </div>
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Fecha de nacimiento</label>
+                <input type="date" class="form-control" name="fecha_nacimiento">
+            </div>
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Puesto</label>
+                <input type="text" class="form-control" name="puesto">
+            </div>
+            <input type="submit" value="Registro" class="btn btn-primary" name="btnregistrar">
+        </form>
+
+        <?php
+            if (!empty($_POST["btnregistrar"])){
+              if (!empty($_POST["nombre"]) and !empty($_POST["apellido"]) and !empty($_POST["fecha_nacimiento"]) and !empty($_POST["puesto"])){
+                $nombre=$_POST["nombre"];
+                $apellido=$_POST["apellido"];
+                $fecha_nacimiento=$_POST["fecha_nacimiento"];
+                $puesto=$_POST["puesto"];
+            
+                $sql=$conexion->query(" insert into empleados(nombre, apellido, fecha_nacimiento, puesto)values('$nombre','$apellido','$fecha_nacimiento','$puesto')");
+            
+                if($sql==1){
+                    echo '<div class="alert alert-success">Persona registrada correctamente</div>';
+                }
+                else{
+                    echo '<div class="alert alet-danger">Alguno de los datos esta incorrecto</div>';
+                }
+              }
+              else{
+                echo "Los campos aun no se han llenado correctamente";
+              }
+               
+            }           
+            ?>
+        <div class="col-7 p-4">
+<table class="table">
+  <thead >
+ 
+  </thead>
+  <tbody>
+  <?php
+
+ /*  los datos se se muestran en la tabla son datos que han sido ingresados en la base de datos aun no he echo el ingreso de datos con el from pero se cargan los datos que meti al phpmyadmin */
+ 
+    $sql=$conexion->query(" select * from empleados");
+    while($datos = $sql->fetch_object()) { ?>
+    <?php }?>
+    
+   
+                </tbody>
+            </table>
         </div>
-      </div>
-    </section>
+    </div>
+
+<!-- Main content -->
+  
+
+
 
     
     <!-- /.content -->

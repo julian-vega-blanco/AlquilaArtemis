@@ -1,6 +1,7 @@
+
 <aside class="main-sidebar sidebar-dark-green elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link navbar-green">
+    <a href="/AlquilaArtemis" class="brand-link navbar-green">
       <img src="views/assets/img/download.jpeg"  alt="chamoy" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Alquila Artemis</span>
     </a>
@@ -13,7 +14,7 @@
           <img src="views/assets/img/download.jpeg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Chamoy</a>
+          <a href="/AlquilaArtemis" class="d-block">Chamoy</a>
         </div>
       </div>
 
@@ -22,37 +23,73 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               
-               <a href="views/pages/home/data.php" class="nav-link ">
+               <li class="nav-item">
+               <a href="/AlquilaArtemis" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>
-               
+               </li>
+               <li class="nav-item">
+               <a href="/AlquilaArtemis/clientesIngreso" class="nav-link <?php if ($routerArray[2]=="clientesIngreso"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Clientes Ingreso</p>
+                </a>
+               </li>
+               <li class="nav-item">
+               <a href="/AlquilaArtemis/empleadosIngreso" class="nav-link <?php if ($routerArray[2]=="empleadosIngreso"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Empleados Ingreso</p>
+                </a>
+               </li>
+               <li class="nav-item">
+               <a href="/AlquilaArtemis/obrasIngreso" class="nav-link <?php if ($routerArray[2]=="obrasIngreso"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Obras Ingreso</p>
+                </a>
+               </li>
+               <li class="nav-item">
+               <a href="/AlquilaArtemis/productosIngreso" class="nav-link <?php if ($routerArray[2]=="productosIngreso"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Productos Ingreso</p>
+                </a>
+               </li>
                <li class="nav-item menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Formularios
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../tables/simple.html" class="nav-link">
+            <li class="nav-item">
+                <a href="/AlquilaArtemis/empleado" class="nav-link <?php if ($routerArray[2]=="empleado"): ?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>Empleados</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="views/modules/datatables" class="nav-link ">
+                <a href="/AlquilaArtemis/alquilar" class="nav-link <?php if ($routerArray[2]=="alquiler"): ?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>Alquiler</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../tables/jsgrid.html" class="nav-link">
+                <a href="/AlquilaArtemis/devolucion" class="nav-link <?php if ($routerArray[2]=="devolucion"): ?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
+                  <p>Devoluciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/AlquilaArtemis/liquidacion" class="nav-link <?php if ($routerArray[2]=="liquidacion"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liquidaciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/AlquilaArtemis/inventarios" class="nav-link <?php if ($routerArray[2]=="inventarios"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inventarios</p>
                 </a>
               </li>
             </ul>

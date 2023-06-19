@@ -1,6 +1,8 @@
 -- SQLBook: Code
 CREATE DATABASE alquilartemis;
 
+USE alquilartemis;   
+
 CREATE TABLE empleados (
     empleado_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nombre VARCHAR(255) NOT NULL,
@@ -87,7 +89,7 @@ CREATE TABLE entrada_detalle (
     entrada_cantidad_subalquilada INT NOT NULL,
     estado VARCHAR(55) NOT NULL,
     CONSTRAINT fk_entrada_id FOREIGN KEY (entrada_id) REFERENCES entrada(entrada_id),
-    CONSTRAINT fk_producto_id1 FOREIGN KEY (producto_id) REFERENCES producto(ID),
+    CONSTRAINT fk_producto_id1 FOREIGN KEY (producto_id) REFERENCES producto(id),
     CONSTRAINT fk_obra_id FOREIGN KEY (obra_id) REFERENCES obra(obra_id),
     CONSTRAINT fk_cliente_id2 FOREIGN KEY (cliente_id) REFERENCES cliente(cliente_id)
 );
@@ -101,7 +103,7 @@ CREATE TABLE inventario (
     CantidadFinal INT NOT NULL,
     FechaInventario DATE NOT NULL,
     TipoOperacion VARCHAR(55) NOT NULL,
-    CONSTRAINT fk_producto_id2 FOREIGN KEY (producto_id) REFERENCES producto(ID)
+    CONSTRAINT fk_producto_id2 FOREIGN KEY (producto_id) REFERENCES producto(id)
 );
 
 

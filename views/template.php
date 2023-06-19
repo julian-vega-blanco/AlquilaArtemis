@@ -1,3 +1,9 @@
+
+<?php
+$routesArray = explode('/', $_SERVER['REQUEST_URI']);
+$routesArray = array_filter($routesArray);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,17 +61,53 @@
   <?php include "modules/sidebar/sidebar.php";?>
 
   <!-- Content Wrapper. Contains page content -->
+  
+  <div class="main-footer">
  
-  <?php include "modules/datatables/datatables.php";?>
 
+
+
+   <?php
+  
+
+  if (!empty($routesArray[2])){
+    if(
+      $routesArray[2] == "clientesIngreso" ||
+      $routesArray[2] == "empleadosIngreso" ||
+      $routesArray[2] == "obrasIngreso" ||
+      $routesArray[2] == "productosIngreso" ||
+      $routesArray[2] == "alquilar" ||
+      $routesArray[2] == "cliente" ||
+      $routesArray[2] == "devolucion" ||
+      $routesArray[2] == "empleado" ||
+      $routesArray[2] == "inventarios" ||
+      $routesArray[2] == "liquidacion" ||
+      $routesArray[2] == "obra" ||
+      $routesArray[2] == "producto" ||
+      $routesArray[2] == "home"
+    ){
+      include "views/pages/".$routesArray[2]."/".$routesArray[2].".php";                       
+    }
+  }else{
+    include "views/pages/home/home.php";
+  }
+
+
+
+
+
+
+
+  ?>
   <!-- /.content-wrapper -->
   
   <?php include "modules/footer/footer.php";?>
-
-  <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
+</footer>
+  <!-- Control Sidebar -->
+  
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
@@ -73,7 +115,6 @@
 
 <script>
   $(function () {
-
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,

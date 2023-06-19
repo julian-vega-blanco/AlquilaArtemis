@@ -7,7 +7,7 @@ $conexion= new mysqli("localhost","root","","alquilartemis");
 
 
 
-    <div class="container-fluid text-center row">
+    <div class="container-fluid text-center justify-content-center row">
         <form class="text-center col-12" action="" method="POST">
             <h3>Registro de empleado</h3>
             
@@ -41,7 +41,7 @@ $conexion= new mysqli("localhost","root","","alquilartemis");
                 $sql=$conexion->query(" insert into empleados(nombre, apellido, fecha_nacimiento, puesto)values('$nombre','$apellido','$fecha_nacimiento','$puesto')");
             
                 if($sql==1){
-                    echo '<div class="alert alert-success">Persona registrada correctamente</div>';
+                    echo '<div class="alert alert-success p-2 m-2">Persona registrada correctamente</div>';
                 }
                 else{
                     echo '<div class="alert alet-danger">Alguno de los datos esta incorrecto</div>';
@@ -53,12 +53,7 @@ $conexion= new mysqli("localhost","root","","alquilartemis");
                
             }           
             ?>
-        <div class="col-7 p-4">
-<table class="table">
-  <thead >
- 
-  </thead>
-  <tbody>
+
   <?php
 
  /*  los datos se se muestran en la tabla son datos que han sido ingresados en la base de datos aun no he echo el ingreso de datos con el from pero se cargan los datos que meti al phpmyadmin */

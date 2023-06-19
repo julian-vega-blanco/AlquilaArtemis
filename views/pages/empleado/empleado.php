@@ -15,7 +15,7 @@
     </section>
 
     <?php 
-$url = "http://localhost/AlquilaArtemis/api/backend/controlers/campers.php?op=GetAll";
+$url = "http://localhost/AlquilaArtemis/api/backend/controlers/alquilartemis.php?op=GetEmpleado";
 $curl = curl_init(); 
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -48,9 +48,7 @@ $output = json_decode(curl_exec($curl));
                   </tr>
                   </thead>
                   <tbody>
-                    <?php foreach ($output as $out) {
-                      # code...
-                    ?>
+                    <?php foreach ($output as $out) {?>
                   <tr>
                   
                     <td><?php echo $out->empleado_id;?></td>

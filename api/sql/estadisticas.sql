@@ -107,13 +107,3 @@ CREATE TABLE inventario (
 );
 
 
-
-
-INSERT INTO `empleados` (`empleado_id`, `nombre`, `apellido`, `fecha_nacimiento`, `puesto`) VALUES
-(1, 'Andres Santiago','Rincon Diaz', 2009-12-09, 'produccion'),
-(2, 'Sebastia Andres','Zuluaga Salgado', 2002-12-07, 'produccion'),
-(3, 'Santiago Pepo','Castro Nino', 2003-12-03, 'produccion'),
-(4, 'Teemo Teee',' Lirroz Nica', 2000-12-26, 'produccion'),
-(5, 'Andres Santiago','Rincon Diaz', 2002-12-00, 'produccion'),
-(6, 'Andres Santiago','Rincon', 2001-12-09, 'produccion');
-

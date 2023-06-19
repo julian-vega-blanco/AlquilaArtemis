@@ -69,6 +69,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="/AlquilaArtemis/producto" class="nav-link <?php if ($routerArray[2]=="producto"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Productos</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/AlquilaArtemis/alquilar" class="nav-link <?php if ($routerArray[2]=="alquiler"): ?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Alquiler</p>

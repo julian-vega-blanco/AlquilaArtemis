@@ -8,7 +8,7 @@ $conexion= new mysqli("localhost","root","","alquilartemis");
 
 
     <div class="container-fluid text-center justify-content-center row">
-        <form class="text-center col-12" action="" method="POST">
+        <form class="text-center col-6" action="" method="POST">
             <h3>Registro de Producto</h3>
             
             <div class="mb-4">
@@ -41,14 +41,14 @@ $conexion= new mysqli("localhost","root","","alquilartemis");
                 $sql=$conexion->query(" insert into producto(Nombre, Descripcion, Precio, Cantidad)values('$Nombre','$Descripcion','$Precio','$Cantidad')");
             
                 if($sql==1){
-                    echo '<div class="alert alert-success p-2 m-2">Persona registrada correctamente</div>';
+                    echo '<div class="alert alert-success p-2 m-2 col-6"><div class="alert alert-success p-2 m-2">Producto registrado correctamente</div></div>';
                 }
                 else{
-                    echo '<div class="alert alet-danger">Alguno de los datos esta incorrecto</div>';
+                    echo '<div class="alert alet-danger p-2 m-2 col-6"><div class="alert alet-danger">Alguno de los datos esta incorrecto</div></div>';
                 }
               }
               else{
-                echo "Los campos aun no se han llenado correctamente";
+                echo '<div class="alert alet-danger p-2 m-2 col-6"><div class="alert alert-danger">Ingrese datos en el formulario</div></div>';
               }
                
             }           

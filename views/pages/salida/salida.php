@@ -2,12 +2,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Obras</h1>
+            <h1>Salidas</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/AlquilaArtemis/">Home</a></li>
-              <li class="breadcrumb-item active">Obras</li>
+              <li class="breadcrumb-item active">Salidas</li>
             </ol>
           </div>
         </div>
@@ -15,7 +15,7 @@
     </section>
 
     <?php 
-$url = "http://localhost/AlquilaArtemis/api/backend/controlers/alquilartemis.php?op=GetObra";
+$url = "http://localhost/AlquilaArtemis/api/backend/controlers/alquilartemis.php?op=GetSalida";
 $curl = curl_init(); 
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -39,13 +39,13 @@ $output = json_decode(curl_exec($curl));
                 <table id="example2" class="table table-bordered">
                   <thead>
                   <tr>
-                    <th>Obra_id</th>
-                    <th>Nombre</th>
-                    <th>direccion</th>
-                    <th>ciudad</th>
-                    <th>estado</th>
-                    <th>fecha_inicio</th>
-                    <th>fecha_fin</th>
+                    <th>salida_id</th>
+                    <th>cliente_id</th>
+                    <th>Fecha de salida</th>
+                    <th>Hora de salida</th>
+                    <th>Subtotal de peso</th>
+                    <th>Placa del transporte</th>
+                    <th>Observaciones</th>
                     
                   </tr>
                   </thead>
@@ -53,13 +53,13 @@ $output = json_decode(curl_exec($curl));
                     <?php foreach ($output as $out) {?>
                   <tr>
                   
-                    <td><?php echo $out->obra_id;?></td>
-                    <td><?php echo $out->nombre;?></td>
-                    <td><?php echo $out->direccion;?></td>
-                    <td><?php echo $out->ciudad;?></td>
-                    <td><?php echo $out->estado;?></td>
-                    <td><?php echo $out->fecha_inicio;?></td>
-                    <td><?php echo $out->fecha_fin;?></td>
+                    <td><?php echo $out->salida_id;?></td>
+                    <td><?php echo $out->cliente_id;?></td>
+                    <td><?php echo $out->fecha_salida;?></td>
+                    <td><?php echo $out->hora_salida;?></td>
+                    <td><?php echo $out->subtotalPeso;?></td>
+                    <td><?php echo $out->placatransporte;?></td>
+                    <td><?php echo $out->observaciones;?></td>
                     
                   </tr>
                   <?php }?>

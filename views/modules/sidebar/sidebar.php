@@ -24,7 +24,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-               <a href="/AlquilaArtemis" class="nav-link active">
+               <a href="/AlquilaArtemis" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>
@@ -53,6 +53,18 @@
                   <p>Productos Ingreso</p>
                 </a>
                </li>
+               <li class="nav-item">
+               <a href="/AlquilaArtemis/ingresoSalida" class="nav-link <?php if ($routerArray[2]=="ingresoSalida"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Salida Ingreso</p>
+                </a>
+               </li>
+               <li class="nav-item">
+               <a href="/AlquilaArtemis/ingresoSalidaDetalle" class="nav-link <?php if ($routerArray[2]=="ingresoSalidaDetalle"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Salida detalle Ingreso</p>
+                </a>
+               </li>
                <li class="nav-item menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
@@ -72,6 +84,30 @@
                 <a href="/AlquilaArtemis/producto" class="nav-link <?php if ($routerArray[2]=="producto"): ?> active <?php endif ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Productos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/AlquilaArtemis/cliente" class="nav-link <?php if ($routerArray[2]=="cliente"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Clientes</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/AlquilaArtemis/obra" class="nav-link <?php if ($routerArray[2]=="obra"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Obras</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/AlquilaArtemis/salida" class="nav-link <?php if ($routerArray[2]=="salida"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Salidas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/AlquilaArtemis/salidaDetalle" class="nav-link <?php if ($routerArray[2]=="salidaDetalle"): ?> active <?php endif ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Salidas detalle</p>
                 </a>
               </li>
               <li class="nav-item">

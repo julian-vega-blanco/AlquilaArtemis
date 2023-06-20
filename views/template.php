@@ -76,6 +76,7 @@ $routesArray = array_filter($routesArray);
       $routesArray[2] == "empleadosIngreso" ||
       $routesArray[2] == "obrasIngreso" ||
       $routesArray[2] == "productosIngreso" ||
+      $routesArray[2] == "ingresoSalida" ||
       $routesArray[2] == "alquilar" ||
       $routesArray[2] == "cliente" ||
       $routesArray[2] == "devolucion" ||
@@ -84,6 +85,9 @@ $routesArray = array_filter($routesArray);
       $routesArray[2] == "liquidacion" ||
       $routesArray[2] == "obra" ||
       $routesArray[2] == "producto" ||
+      $routesArray[2] == "salida" ||
+      $routesArray[2] == "ingresoSalidaDetalle" ||
+      $routesArray[2] == "salidaDetalle" ||
       $routesArray[2] == "home"
     ){
       include "views/pages/".$routesArray[2]."/".$routesArray[2].".php";                       
@@ -91,12 +95,6 @@ $routesArray = array_filter($routesArray);
   }else{
     include "views/pages/home/home.php";
   }
-
-
-
-
-
-
 
   ?>
   <!-- /.content-wrapper -->

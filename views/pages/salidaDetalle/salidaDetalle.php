@@ -2,12 +2,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Obras</h1>
+            <h1>Detalle de Salidas</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/AlquilaArtemis/">Home</a></li>
-              <li class="breadcrumb-item active">Obras</li>
+              <li class="breadcrumb-item active">Detalle de Salidas</li>
             </ol>
           </div>
         </div>
@@ -15,7 +15,7 @@
     </section>
 
     <?php 
-$url = "http://localhost/AlquilaArtemis/api/backend/controlers/alquilartemis.php?op=GetObra";
+$url = "http://localhost/AlquilaArtemis/api/backend/controlers/alquilartemis.php?op=GetSalidaDetalle";
 $curl = curl_init(); 
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -39,13 +39,17 @@ $output = json_decode(curl_exec($curl));
                 <table id="example2" class="table table-bordered">
                   <thead>
                   <tr>
-                    <th>Obra_id</th>
-                    <th>Nombre</th>
-                    <th>direccion</th>
-                    <th>ciudad</th>
+                    <th>salida detalle id</th>
+                    <th>salida id</th>
+                    <th>producto id</th>
+                    <th>empleado id</th>
+                    <th>cantidad salida</th>
+                    <th>cantidad propia</th>
+                    <th>cantidad subalquilada</th>
+                    <th>valor Unidad</th>
+                    <th>fecha standBy</th>
                     <th>estado</th>
-                    <th>fecha_inicio</th>
-                    <th>fecha_fin</th>
+                    <th>valor Total</th>
                     
                   </tr>
                   </thead>
@@ -53,13 +57,17 @@ $output = json_decode(curl_exec($curl));
                     <?php foreach ($output as $out) {?>
                   <tr>
                   
-                    <td><?php echo $out->obra_id;?></td>
-                    <td><?php echo $out->nombre;?></td>
-                    <td><?php echo $out->direccion;?></td>
-                    <td><?php echo $out->ciudad;?></td>
+                    <td><?php echo $out->salida_detalle_id;?></td>
+                    <td><?php echo $out->salida_id;?></td>
+                    <td><?php echo $out->producto_id;?></td>
+                    <td><?php echo $out->empleado_id;?></td>
+                    <td><?php echo $out->cantidad_salida;?></td>
+                    <td><?php echo $out->cantidad_propia;?></td>
+                    <td><?php echo $out->cantidad_subalquilada;?></td>
+                    <td><?php echo $out->valorUnidad;?></td>
+                    <td><?php echo $out->fecha_standBy;?></td>
                     <td><?php echo $out->estado;?></td>
-                    <td><?php echo $out->fecha_inicio;?></td>
-                    <td><?php echo $out->fecha_fin;?></td>
+                    <td><?php echo $out->valorTotal;?></td>
                     
                   </tr>
                   <?php }?>

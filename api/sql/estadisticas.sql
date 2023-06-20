@@ -40,7 +40,7 @@ CREATE TABLE obra (
 CREATE TABLE salida (
     salida_id INT PRIMARY KEY AUTO_INCREMENT,
     cliente_id INT,
-    fecha_salida DATETIME,
+    fecha_salida DATE,
     hora_salida TIME,
     subtotalPeso DECIMAL(10, 2) NOT NULL,
     placatransporte VARCHAR(55) NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE salida_detalle (
     estado VARCHAR(55) NOT NULL,
     valorTotal DECIMAL(10, 2) NOT NULL,
     CONSTRAINT fk_salida_id FOREIGN KEY (salida_id) REFERENCES salida(salida_id),
-    CONSTRAINT fk_producto_id FOREIGN KEY (producto_id) REFERENCES producto(ID),
+    CONSTRAINT fk_producto_id FOREIGN KEY (producto_id) REFERENCES producto(id),
     CONSTRAINT fk_empleado_id FOREIGN KEY (empleado_id) REFERENCES empleados(empleado_id)
 );
 

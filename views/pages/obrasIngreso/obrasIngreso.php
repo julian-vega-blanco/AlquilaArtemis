@@ -1,53 +1,86 @@
-<section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Obras Ingreso</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/AlquilaArtemis/">Home</a></li>
-              <li class="breadcrumb-item active">Obras Ingreso</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+<?php
 
-    <!-- Main content -->
-    <section class="content">
+$conexion= new mysqli("localhost","root","","alquilartemis");
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <!-- Default box -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Title</h3>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body">
-                Start creating your amazing application!
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                Footer
-              </div>
-              <!-- /.card-footer-->
+?>
+
+
+
+    <div class="container-fluid text-center justify-content-center row">
+        <form class="text-center col-6" action="" method="POST">
+            <h3>Registro de Obra</h3>
+            
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Nombre de la obra</label>
+                <input type="text" class="form-control" name="nombre">
             </div>
-            <!-- /.card -->
-          </div>
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Direccion de la obra</label>
+                <input type="text" class="form-control" name="direccion">
+            </div>
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" name="ciudad">
+            </div>
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Estado de la obra</label>
+                <input type="text" class="form-control" name="estado">
+            </div>
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Fecha de inicio</label>
+                <input type="date" class="form-control" name="fecha_inicio">
+            </div>
+            <div class="mb-4">
+                <label for="exampleInputEmail" class="form-label">Fecha final</label>
+                <input type="date" class="form-control" name="fecha_fin">
+            </div>
+            <input type="submit" value="Registro" class="btn btn-primary" name="btnregistrar">
+        </form>
+
+        <?php
+            if (!empty($_POST["btnregistrar"])){
+              if (!empty($_POST["nombre"]) and !empty($_POST["direccion"]) and !empty($_POST["ciudad"]) and !empty($_POST["estado"]) and !empty($_POST["fecha_inicio"]) and !empty($_POST["fecha_fin"])){
+                $nombre=$_POST["nombre"];
+                $direccion=$_POST["direccion"];
+                $ciudad=$_POST["ciudad"];
+                $estado=$_POST["estado"];
+                $fecha_inicio=$_POST["fecha_inicio"];
+                $fecha_fin=$_POST["fecha_fin"];
+            
+                $sql=$conexion->query(" insert into obra(nombre, direccion, ciudad, estado, fecha_inicio, fecha_fin)values('$nombre','$direccion','$ciudad','$estado','$fecha_inicio','$fecha_fin')");
+            
+                if($sql==1){
+                    echo '<div class="alert alert-success p-2 m-2 col-6"><div class="alert alert-success p-2 m-2">Obra registrada correctamente</div></div>';
+                }
+                else{
+                    echo '<div class="alert alet-danger p-2 m-2 col-6"><div class="alert alet-danger">Alguno de los datos esta incorrecto</div></div>';
+                }
+              }
+              else{
+                echo '<div class="alert alet-danger p-2 m-2 col-6"><div class="alert alert-danger">Ingrese datos en el formulario</div></div>';
+              }   
+            }        
+            ?>
+
+  <?php
+
+ /*  los datos se se muestran en la tabla son datos que han sido ingresados en la base de datos aun no he echo el ingreso de datos con el from pero se cargan los datos que meti al phpmyadmin */
+ 
+    $sql=$conexion->query(" select * from obra");
+    while($datos = $sql->fetch_object()) { ?>
+    <?php }?>
+    
+   
+                </tbody>
+            </table>
         </div>
-      </div>
-    </section>
+    </div>
+
+<!-- Main content -->
+  
+
+
 
     
     <!-- /.content -->
